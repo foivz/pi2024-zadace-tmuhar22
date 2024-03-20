@@ -15,7 +15,7 @@ Ovaj se programski proizvod izrađuje radi poboljšanja zadovoljstva studenata o
 studentskom restorana
 
 ## Zadatak
-(U root repozitorija učitajte zadatak koji ste dobili i potom ovdje stavite link na njegovo otvaranje!)
+https://github.com/foivz/pi2024-zadace-tmuhar22/blob/master/Zadatak%20-%20SCVZ.pdf
 
 ## Resursi
 Svi resursi nalaze se u mapi _Documentation_.
