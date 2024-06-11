@@ -63,5 +63,27 @@ namespace Zadaca_03
             
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Reviews selectedReview = dgvReviews.CurrentRow.DataBoundItem as Reviews;
+            if (selectedReview != null)
+            {
+                // Potvrda brisanja
+                var confirmResult = MessageBox.Show("Jeste li sigurni da želite obrisati recenziju?", "Potvrda brisanja", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Brisanje recenzije iz baze podataka
+                    ReviewRepository.DeleteReview(selectedReview.Id);
+
+                    // Ažuriranje prikaza u DataGridView
+                    ShowReviews();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a review to delete.");
+            }
+        }
     }
 }

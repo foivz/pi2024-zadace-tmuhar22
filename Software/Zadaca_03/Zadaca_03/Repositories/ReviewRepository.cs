@@ -65,5 +65,13 @@ namespace Zadaca_03.Repositories
             };
             return review;
         }
+
+        public static void DeleteReview(int id)
+        {
+            string sql = $"DELETE FROM Reviews WHERE Id = {id}";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
     }
 }
