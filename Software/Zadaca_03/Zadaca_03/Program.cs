@@ -18,7 +18,7 @@ namespace Zadaca_03
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DB.SetConfiguration("PI2324_tmuhar22_DB", "PI2324_tmuhar22_User", "&l3RTM]d");
-            Application.Run(new FrmStudents());
+            Application.Run(new FrmReviews());
         }
     }
 }
