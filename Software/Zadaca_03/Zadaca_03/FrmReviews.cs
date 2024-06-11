@@ -37,5 +37,31 @@ namespace Zadaca_03
             dgvReviews.Columns["Comment"].DisplayIndex = 4;
             dgvReviews.Columns["DateOfReview"].DisplayIndex = 5;
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
+         // Dohvati tekst iz TextBox-a i pretvori ga u mala slova radi lakše usporedbe
+         string searchTerm = txtSearch.Text.ToLower();
+
+         // Dohvati sve recenzije
+         List<Reviews> allReviews = ReviewRepository.GetReviews();
+
+         // Filtriraj recenzije prema pretraživanju
+        List<Reviews> filteredReviews = allReviews.Where(r => r.Comment.ToLower().Contains(searchTerm) 
+        || r.MenuName.ToLower().Contains(searchTerm) 
+        || r.TasteGrade.ToString().Contains(searchTerm)
+        || r.QuantityGrade.ToString().Contains(searchTerm)).ToList();
+
+        // Prikaži filtrirane recenzije
+        dgvReviews.DataSource = filteredReviews;
+
+        // Postavite ispravan prikaz stupaca nakon filtriranja
+        dgvReviews.Columns["IdMeni"].Visible = false;
+        dgvReviews.Columns["MenuName"].DisplayIndex = 1;
+        dgvReviews.Columns["MenuName"].HeaderText = "Naziv Menija";
+            
+
+        }
     }
 }
