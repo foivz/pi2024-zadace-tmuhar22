@@ -32,6 +32,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAddRow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +73,22 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnAddRow
+            // 
+            this.btnAddRow.Location = new System.Drawing.Point(470, 364);
+            this.btnAddRow.Name = "btnAddRow";
+            this.btnAddRow.Size = new System.Drawing.Size(114, 28);
+            this.btnAddRow.TabIndex = 4;
+            this.btnAddRow.Text = "Dodaj novi redak";
+            this.btnAddRow.UseVisualStyleBackColor = true;
+            this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
+            // 
             // FrmReviews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 435);
+            this.Controls.Add(this.btnAddRow);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAddRow;
     }
 }

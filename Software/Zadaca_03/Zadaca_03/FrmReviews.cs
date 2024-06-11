@@ -85,5 +85,13 @@ namespace Zadaca_03
                 MessageBox.Show("Please select a review to delete.");
             }
         }
+
+        private void btnAddRow_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmUpdate frmUpdate = new FrmUpdate();
+            frmUpdate.ShowDialog();
+            this.Show();
+        }
     }
 }
