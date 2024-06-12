@@ -23,7 +23,16 @@ namespace Zadaca_03
 
         private void FrmUpdate_Load(object sender, EventArgs e)
         {
+            LoadMenus();
             ShowReviews();
+        }
+
+        private void LoadMenus()
+        {
+            List<Menus> menus = MeniRepository.GetMenus();
+            cmbMeni.DataSource = menus;
+            cmbMeni.DisplayMember = "Name";
+            cmbMeni.ValueMember = "Id";
         }
 
         private void ShowReviews()
@@ -43,7 +52,7 @@ namespace Zadaca_03
         private void btnAdd_Click(object sender, EventArgs e)
         {
             int reviewId = int.Parse(txtId.Text);
-            int meniId = int.Parse(txtIdMeni.Text);
+            int meniId = (int)cmbMeni.SelectedValue; // Get selected menu ID from ComboBox
             int tasteGrade = int.Parse(numTasteGrade.Text);
             int quantityGrade = int.Parse(numQuantityGrade.Text);
             string comment = txtComment.Text;
@@ -69,5 +78,6 @@ namespace Zadaca_03
             frmReviews.Show();
             this.Close();
         }
+
     }
 }

@@ -38,17 +38,17 @@
             // 
             // dgvReviews
             // 
-            this.dgvReviews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvReviews.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReviews.Location = new System.Drawing.Point(12, 23);
+            this.dgvReviews.Location = new System.Drawing.Point(9, 14);
             this.dgvReviews.Name = "dgvReviews";
-            this.dgvReviews.Size = new System.Drawing.Size(643, 298);
+            this.dgvReviews.Size = new System.Drawing.Size(693, 289);
             this.dgvReviews.TabIndex = 0;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(170, 367);
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearch.Location = new System.Drawing.Point(300, 322);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(107, 28);
             this.btnSearch.TabIndex = 1;
@@ -58,26 +58,31 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 372);
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtSearch.Location = new System.Drawing.Point(413, 330);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(138, 20);
+            this.txtSearch.Size = new System.Drawing.Size(129, 20);
             this.txtSearch.TabIndex = 2;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(311, 367);
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.Location = new System.Drawing.Point(300, 368);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(104, 28);
+            this.btnDelete.Size = new System.Drawing.Size(107, 31);
             this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Obriši";
+            this.btnDelete.Text = "Obriši redak";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAddRow
             // 
-            this.btnAddRow.Location = new System.Drawing.Point(470, 364);
+            this.btnAddRow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRow.Location = new System.Drawing.Point(300, 417);
             this.btnAddRow.Name = "btnAddRow";
-            this.btnAddRow.Size = new System.Drawing.Size(114, 28);
+            this.btnAddRow.Size = new System.Drawing.Size(107, 31);
             this.btnAddRow.TabIndex = 4;
             this.btnAddRow.Text = "Dodaj novi redak";
             this.btnAddRow.UseVisualStyleBackColor = true;
@@ -87,13 +92,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 435);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::Zadaca_03.Resource1.abstract_background_gradient_abstract_modern_background_for_mobile_apps_free_vector;
+            this.ClientSize = new System.Drawing.Size(710, 482);
             this.Controls.Add(this.btnAddRow);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvReviews);
             this.Name = "FrmReviews";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Popis Recenzija";
             this.Load += new System.EventHandler(this.FrmReviews_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
