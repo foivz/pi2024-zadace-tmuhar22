@@ -74,8 +74,29 @@ namespace Zadaca_03.Repositories
             DB.CloseConnection();
         }
 
+        public static bool ReviewExists(int id)
+        {
+            bool exists = false;
+            string sql = $"SELECT COUNT(*) FROM Reviews WHERE Id = {id}";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                int count = int.Parse(reader[0].ToString());
+                exists = count > 0;
+                reader.Close();
+            }
+            DB.CloseConnection();
+            return exists;
+        }
+
         public static void InsertReview(Reviews review)
         {
+            if (ReviewExists(review.Id))
+            {
+                throw new Exception("Recenzija s tim id-em već postoji.");
+            }
             string sql = $"INSERT INTO Reviews (Id, IdMeni, TasteGrade, QuantityGrade, Comment, DateOfReview) VALUES ({review.Id},{review.IdMeni}, {review.TasteGrade}, {review.QuantityGrade}, '{review.Comment}', '{review.DateOfReview:yyyy-MM-dd HH:mm:ss}')";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);

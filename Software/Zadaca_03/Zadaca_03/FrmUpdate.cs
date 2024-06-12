@@ -25,6 +25,12 @@ namespace Zadaca_03
         {
             LoadMenus();
             ShowReviews();
+
+            numTasteGrade.Minimum = 1;
+            numTasteGrade.Maximum = 5;
+
+            numQuantityGrade.Minimum = 1;
+            numQuantityGrade.Maximum = 5;
         }
 
         private void LoadMenus()
@@ -51,25 +57,32 @@ namespace Zadaca_03
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int reviewId = int.Parse(txtId.Text);
-            int meniId = (int)cmbMeni.SelectedValue; // Get selected menu ID from ComboBox
-            int tasteGrade = int.Parse(numTasteGrade.Text);
-            int quantityGrade = int.Parse(numQuantityGrade.Text);
-            string comment = txtComment.Text;
-            DateTime dateOfReview = DateTime.Now;
-
-            Reviews newReview = new Reviews
+            try
             {
-                Id = reviewId,
-                IdMeni = meniId,
-                TasteGrade = tasteGrade,
-                QuantityGrade = quantityGrade,
-                Comment = comment,
-                DateOfReview = dateOfReview,
-            };
+                int reviewId = int.Parse(txtId.Text);
+                int meniId = (int)cmbMeni.SelectedValue; // Get selected menu ID from ComboBox
+                int tasteGrade = int.Parse(numTasteGrade.Text);
+                int quantityGrade = int.Parse(numQuantityGrade.Text);
+                string comment = txtComment.Text;
+                DateTime dateOfReview = DateTime.Now;
 
-            ReviewRepository.InsertReview(newReview);
-            ShowReviews();
+                Reviews newReview = new Reviews
+                {
+                    Id = reviewId,
+                    IdMeni = meniId,
+                    TasteGrade = tasteGrade,
+                    QuantityGrade = quantityGrade,
+                    Comment = comment,
+                    DateOfReview = dateOfReview,
+                };
+
+                ReviewRepository.InsertReview(newReview);
+                ShowReviews();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
