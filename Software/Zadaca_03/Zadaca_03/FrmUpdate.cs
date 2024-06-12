@@ -42,34 +42,32 @@ namespace Zadaca_03
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string menuName = txtMenuName.Text;
+            int reviewId = int.Parse(txtId.Text);
+            int meniId = int.Parse(txtIdMeni.Text);
             int tasteGrade = int.Parse(numTasteGrade.Text);
             int quantityGrade = int.Parse(numQuantityGrade.Text);
             string comment = txtComment.Text;
             DateTime dateOfReview = DateTime.Now;
 
-            int menuId = GetMenuIdByName(menuName);
-
             Reviews newReview = new Reviews
             {
-                IdMeni = menuId,
+                Id = reviewId,
+                IdMeni = meniId,
                 TasteGrade = tasteGrade,
                 QuantityGrade = quantityGrade,
                 Comment = comment,
                 DateOfReview = dateOfReview,
-                MenuName = menuName
             };
 
             ReviewRepository.InsertReview(newReview);
             ShowReviews();
         }
 
-        private int GetMenuIdByName(string menuName)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            // Logika za dohvaćanje Id menija prema imenu menija
-            // Pretpostavimo da postoji metoda u nekom MenuRepositoryju koja to omogućava
-            return MeniRepository.GetMenuIdByName(menuName);
+            FrmReviews frmReviews = new FrmReviews();
+            frmReviews.Show();
+            this.Close();
         }
-
     }
 }

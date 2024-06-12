@@ -38,7 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.txtMenuName = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtIdMeni = new System.Windows.Forms.TextBox();
+            this.txtIdRecenzije = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTasteGrade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantityGrade)).BeginInit();
@@ -51,26 +53,26 @@
             this.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReviews.Location = new System.Drawing.Point(29, 12);
             this.dgvReviews.Name = "dgvReviews";
-            this.dgvReviews.Size = new System.Drawing.Size(732, 249);
+            this.dgvReviews.Size = new System.Drawing.Size(649, 213);
             this.dgvReviews.TabIndex = 0;
             // 
             // numTasteGrade
             // 
-            this.numTasteGrade.Location = new System.Drawing.Point(124, 311);
+            this.numTasteGrade.Location = new System.Drawing.Point(190, 315);
             this.numTasteGrade.Name = "numTasteGrade";
             this.numTasteGrade.Size = new System.Drawing.Size(44, 20);
             this.numTasteGrade.TabIndex = 2;
             // 
             // numQuantityGrade
             // 
-            this.numQuantityGrade.Location = new System.Drawing.Point(124, 337);
+            this.numQuantityGrade.Location = new System.Drawing.Point(190, 341);
             this.numQuantityGrade.Name = "numQuantityGrade";
             this.numQuantityGrade.Size = new System.Drawing.Size(44, 20);
             this.numQuantityGrade.TabIndex = 3;
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(124, 366);
+            this.txtComment.Location = new System.Drawing.Point(190, 370);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(253, 56);
@@ -78,7 +80,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(418, 390);
+            this.btnAdd.Location = new System.Drawing.Point(190, 461);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 32);
             this.btnAdd.TabIndex = 5;
@@ -89,7 +91,7 @@
             // lblMeni
             // 
             this.lblMeni.AutoSize = true;
-            this.lblMeni.Location = new System.Drawing.Point(26, 287);
+            this.lblMeni.Location = new System.Drawing.Point(92, 291);
             this.lblMeni.Name = "lblMeni";
             this.lblMeni.Size = new System.Drawing.Size(68, 13);
             this.lblMeni.TabIndex = 6;
@@ -98,7 +100,7 @@
             // lblTaste
             // 
             this.lblTaste.AutoSize = true;
-            this.lblTaste.Location = new System.Drawing.Point(26, 313);
+            this.lblTaste.Location = new System.Drawing.Point(92, 317);
             this.lblTaste.Name = "lblTaste";
             this.lblTaste.Size = new System.Drawing.Size(75, 13);
             this.lblTaste.TabIndex = 7;
@@ -107,7 +109,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 344);
+            this.label3.Location = new System.Drawing.Point(92, 348);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 8;
@@ -116,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 366);
+            this.label4.Location = new System.Drawing.Point(92, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 9;
@@ -124,26 +126,46 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(585, 390);
+            this.btnBack.Location = new System.Drawing.Point(337, 461);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(106, 32);
             this.btnBack.TabIndex = 10;
             this.btnBack.Text = "Natrag";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // txtMenuName
+            // txtId
             // 
-            this.txtMenuName.Location = new System.Drawing.Point(124, 284);
-            this.txtMenuName.Name = "txtMenuName";
-            this.txtMenuName.Size = new System.Drawing.Size(197, 20);
-            this.txtMenuName.TabIndex = 11;
+            this.txtId.Location = new System.Drawing.Point(190, 254);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(160, 20);
+            this.txtId.TabIndex = 12;
+            // 
+            // txtIdMeni
+            // 
+            this.txtIdMeni.Location = new System.Drawing.Point(190, 289);
+            this.txtIdMeni.Name = "txtIdMeni";
+            this.txtIdMeni.Size = new System.Drawing.Size(160, 20);
+            this.txtIdMeni.TabIndex = 13;
+            // 
+            // txtIdRecenzije
+            // 
+            this.txtIdRecenzije.AutoSize = true;
+            this.txtIdRecenzije.Location = new System.Drawing.Point(92, 261);
+            this.txtIdRecenzije.Name = "txtIdRecenzije";
+            this.txtIdRecenzije.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtIdRecenzije.Size = new System.Drawing.Size(61, 13);
+            this.txtIdRecenzije.TabIndex = 14;
+            this.txtIdRecenzije.Text = "Id recenzije";
             // 
             // FrmUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtMenuName);
+            this.ClientSize = new System.Drawing.Size(677, 515);
+            this.Controls.Add(this.txtIdRecenzije);
+            this.Controls.Add(this.txtIdMeni);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -177,6 +199,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox txtMenuName;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtIdMeni;
+        private System.Windows.Forms.Label txtIdRecenzije;
     }
 }

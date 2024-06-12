@@ -90,8 +90,7 @@ namespace Zadaca_03
         {
             this.Hide();
             FrmUpdate frmUpdate = new FrmUpdate();
-            frmUpdate.ShowDialog();
-            this.Show();
+            frmUpdate.Show();
             ShowReviews();
         }
     }

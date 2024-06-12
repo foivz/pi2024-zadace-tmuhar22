@@ -76,7 +76,7 @@ namespace Zadaca_03.Repositories
 
         public static void InsertReview(Reviews review)
         {
-            string sql = $"INSERT INTO Reviews (IdMeni, TasteGrade, QuantityGrade, Comment, DateOfReview) VALUES ({review.IdMeni}, {review.TasteGrade}, {review.QuantityGrade}, '{review.Comment}', '{review.DateOfReview:yyyy-MM-dd HH:mm:ss}')";
+            string sql = $"INSERT INTO Reviews (Id, IdMeni, TasteGrade, QuantityGrade, Comment, DateOfReview) VALUES ({review.Id},{review.IdMeni}, {review.TasteGrade}, {review.QuantityGrade}, '{review.Comment}', '{review.DateOfReview:yyyy-MM-dd HH:mm:ss}')";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
@@ -84,7 +84,7 @@ namespace Zadaca_03.Repositories
 
         public static void UpdateReview(Reviews review)
         {
-            string sql = $"UPDATE Reviews SET IdMeni = {review.IdMeni}, TasteGrade = {review.TasteGrade}, QuantityGrade = {review.QuantityGrade}, Comment = '{review.Comment}', DateOfReview = '{review.DateOfReview:yyyy-MM-dd HH:mm:ss}' WHERE Id = {review.Id}";
+            string sql = $"UPDATE Reviews SET Id = {review.Id}, IdMeni = {review.IdMeni}, TasteGrade = {review.TasteGrade}, QuantityGrade = {review.QuantityGrade}, Comment = '{review.Comment}', DateOfReview = '{review.DateOfReview:yyyy-MM-dd HH:mm:ss}' WHERE Id = {review.Id}";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
