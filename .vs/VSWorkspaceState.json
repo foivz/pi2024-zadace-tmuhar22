@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Software",
+    "\\Software\\Zadaca_03",
+    "\\Software\\Zadaca_03\\Zadaca_03",
+    "\\Software\\Zadaca_03\\Zadaca_03\\Models",
+    "\\Software\\Zadaca_03\\Zadaca_03\\Repositories"
   ],
+  "SelectedNode": "\\Software\\Zadaca_03\\Zadaca_03\\Models\\Updates.cs",
   "PreviewInSolutionExplorer": false
 }

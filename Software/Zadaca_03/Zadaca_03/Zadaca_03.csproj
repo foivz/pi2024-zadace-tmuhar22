@@ -70,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MeniRepository.cs" />
     <Compile Include="Repositories\ReviewRepository.cs" />
+    <Compile Include="Repositories\UpdateRepository.cs" />
     <EmbeddedResource Include="FrmReviews.resx">
       <DependentUpon>FrmReviews.cs</DependentUpon>
     </EmbeddedResource>
