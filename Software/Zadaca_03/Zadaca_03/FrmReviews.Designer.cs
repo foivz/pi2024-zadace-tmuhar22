@@ -103,11 +103,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvReviews;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddRow;
+        public System.Windows.Forms.DataGridView dgvReviews;
     }
 }

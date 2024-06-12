@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zadaca_03.Models;
 using Zadaca_03.Repositories;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Zadaca_03
 {
@@ -37,7 +38,6 @@ namespace Zadaca_03
             dgvReviews.Columns["Comment"].DisplayIndex = 4;
             dgvReviews.Columns["DateOfReview"].DisplayIndex = 5;
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             
@@ -92,6 +92,7 @@ namespace Zadaca_03
             FrmUpdate frmUpdate = new FrmUpdate();
             frmUpdate.ShowDialog();
             this.Show();
+            ShowReviews();
         }
     }
 }

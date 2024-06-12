@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.dgvReviews = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numTasteGrade = new System.Windows.Forms.NumericUpDown();
+            this.numQuantityGrade = new System.Windows.Forms.NumericUpDown();
+            this.txtComment = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblMeni = new System.Windows.Forms.Label();
             this.lblTaste = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.txtMenuName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTasteGrade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantityGrade)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvReviews
@@ -54,35 +54,27 @@
             this.dgvReviews.Size = new System.Drawing.Size(732, 249);
             this.dgvReviews.TabIndex = 0;
             // 
-            // comboBox1
+            // numTasteGrade
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(124, 284);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 21);
-            this.comboBox1.TabIndex = 1;
+            this.numTasteGrade.Location = new System.Drawing.Point(124, 311);
+            this.numTasteGrade.Name = "numTasteGrade";
+            this.numTasteGrade.Size = new System.Drawing.Size(44, 20);
+            this.numTasteGrade.TabIndex = 2;
             // 
-            // numericUpDown1
+            // numQuantityGrade
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(124, 311);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown1.TabIndex = 2;
+            this.numQuantityGrade.Location = new System.Drawing.Point(124, 337);
+            this.numQuantityGrade.Name = "numQuantityGrade";
+            this.numQuantityGrade.Size = new System.Drawing.Size(44, 20);
+            this.numQuantityGrade.TabIndex = 3;
             // 
-            // numericUpDown2
+            // txtComment
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(124, 337);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown2.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(124, 366);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 56);
-            this.textBox1.TabIndex = 4;
+            this.txtComment.Location = new System.Drawing.Point(124, 366);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(253, 56);
+            this.txtComment.TabIndex = 4;
             // 
             // btnAdd
             // 
@@ -92,15 +84,16 @@
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Dodaj Redak";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblMeni
             // 
             this.lblMeni.AutoSize = true;
             this.lblMeni.Location = new System.Drawing.Point(26, 287);
             this.lblMeni.Name = "lblMeni";
-            this.lblMeni.Size = new System.Drawing.Size(79, 13);
+            this.lblMeni.Size = new System.Drawing.Size(68, 13);
             this.lblMeni.TabIndex = 6;
-            this.lblMeni.Text = "Odaberite Meni";
+            this.lblMeni.Text = "Naziv Menija";
             // 
             // lblTaste
             // 
@@ -138,28 +131,35 @@
             this.btnBack.Text = "Natrag";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
+            // txtMenuName
+            // 
+            this.txtMenuName.Location = new System.Drawing.Point(124, 284);
+            this.txtMenuName.Name = "txtMenuName";
+            this.txtMenuName.Size = new System.Drawing.Size(197, 20);
+            this.txtMenuName.TabIndex = 11;
+            // 
             // FrmUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtMenuName);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTaste);
             this.Controls.Add(this.lblMeni);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtComment);
+            this.Controls.Add(this.numQuantityGrade);
+            this.Controls.Add(this.numTasteGrade);
             this.Controls.Add(this.dgvReviews);
             this.Name = "FrmUpdate";
             this.Text = "FrmUpdate";
             this.Load += new System.EventHandler(this.FrmUpdate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTasteGrade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantityGrade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,15 +168,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvReviews;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown numTasteGrade;
+        private System.Windows.Forms.NumericUpDown numQuantityGrade;
+        private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblMeni;
         private System.Windows.Forms.Label lblTaste;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txtMenuName;
     }
 }

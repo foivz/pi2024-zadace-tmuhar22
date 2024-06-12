@@ -29,18 +29,18 @@ namespace Zadaca_03.Repositories
 
         public static List<Reviews> GetReviews()
         {
-            List<Reviews> students = new List<Reviews>();
+            List<Reviews> reviews = new List<Reviews>();
             string sql = "SELECT r.*, m.Name AS MenuName FROM Reviews r JOIN Menus m ON r.IdMeni = m.Id";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
             {
                 Reviews review = CreateObject(reader);
-                students.Add(review);
+                reviews.Add(review);
             }
             reader.Close();
             DB.CloseConnection();
-            return students;
+            return reviews;
         }
 
         private static Reviews CreateObject(SqlDataReader reader)
@@ -69,6 +69,22 @@ namespace Zadaca_03.Repositories
         public static void DeleteReview(int id)
         {
             string sql = $"DELETE FROM Reviews WHERE Id = {id}";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+
+        public static void InsertReview(Reviews review)
+        {
+            string sql = $"INSERT INTO Reviews (IdMeni, TasteGrade, QuantityGrade, Comment, DateOfReview) VALUES ({review.IdMeni}, {review.TasteGrade}, {review.QuantityGrade}, '{review.Comment}', '{review.DateOfReview:yyyy-MM-dd HH:mm:ss}')";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+
+        public static void UpdateReview(Reviews review)
+        {
+            string sql = $"UPDATE Reviews SET IdMeni = {review.IdMeni}, TasteGrade = {review.TasteGrade}, QuantityGrade = {review.QuantityGrade}, Comment = '{review.Comment}', DateOfReview = '{review.DateOfReview:yyyy-MM-dd HH:mm:ss}' WHERE Id = {review.Id}";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
